@@ -1,5 +1,37 @@
 import AppLayout from "../Layout/AppLayout";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import Axios from "axios";
+
+const handleRegisterAluno = () => {
+  Axios.post("http://localhost:3001/register", {
+    name: values.name,
+    cost: values.cost,
+    category: values.category,
+  }).then(() => {
+    Axios.post("http://localhost:3001/search", {
+      name: values.name,
+      cost: values.cost,
+      category: values.category,
+    }).then((response) => {
+      setListCard([
+        ...listCard,
+        {
+          id: response.data[0].id,
+          first_name: values.first_name,
+          second_name: values.second_name,
+          cpf: values.cpf,
+          matricula: values.matricula,
+        },
+      ]);
+    });
+  });
+};
+
+const handleaddValues = (value) => {
+  setValues((prevValues) => ({
+    ...prevValues,
+    [value.target.name]: value.target.cpf,}));
+};
 
 export default function CadastroAlunos() {
     return (
@@ -18,14 +50,14 @@ export default function CadastroAlunos() {
       <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
         Primeiro Nome
       </label>
-      <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Alan"></input>
+      <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Alan" onChange={handleaddValues} name="first_name"></input>
       <p class="text-red-500 text-xs italic">Por favor, preencha este campo.</p>
     </div>
     <div class="w-full md:w-1/2 px-3">
       <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
         Sobrenome
       </label>
-      <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Turing"></input>
+      <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Turing" onChange={handleaddValues} name="second_name"></input>
     </div>
   </div>
 
@@ -34,7 +66,7 @@ export default function CadastroAlunos() {
       <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
         CPF do Aluno(a)
       </label>
-      <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="password" placeholder="******************"></input>
+      <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="password" placeholder="******************" onChange={handleaddValues} name="cpf"></input>
       <p class="text-gray-600 text-xs italic">O CPF deve ser digitada neste campo</p>
     </div>
   </div>
@@ -44,7 +76,7 @@ export default function CadastroAlunos() {
       <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
         Matrícula do Aluno(a)
       </label>
-      <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="" placeholder=""></input>
+      <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="" placeholder="" onChange={handleaddValues} name="matricula"></input>
       <p class="text-gray-600 text-xs italic">O número de matrícula deve ser digitado neste campo</p>
     </div>
   </div>
@@ -66,7 +98,7 @@ export default function CadastroAlunos() {
 
 <div class="container py-5 px-2 mx-0 min-w-full flex flex-col items-center">
   <Link to="/">
-    <button class="shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
+    <button class="shadow bg-green-500 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button" onClick={handleRegisterAluno}>
         Cadastrar Aluno
     </button>
   </Link>
