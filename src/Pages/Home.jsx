@@ -5,15 +5,15 @@ export default function Home() {
     return (
         <AppLayout>
             
-            <div className=' items-center'>
+            <div className='items-center'>
                 <div className="App area">
 
                     <Link to="ConsultaAluno" className='botao'>
-                        Consultar aluno
+                        Consultar Alunos
                     </Link>
 
-                    <Link to="CadastroTurma" className='botao'>
-                        Cadastro de turma
+                    <Link to="ConsultaTurma" className='botao'>
+                        Consultar Turmas
                     </Link>
 
                     <Link to="Boletim" className='botao'>

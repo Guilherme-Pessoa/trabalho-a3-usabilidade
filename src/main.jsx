@@ -11,6 +11,9 @@ import {
   Route,
   Link,
 } from "react-router-dom";
+import Nota from './Pages/Nota'
+import CadastroAlunos from './Pages/CadastroAlunos'
+import ConsultaTurma from './Pages/ConsultaTurma'
 
 const router = createBrowserRouter([
   {
@@ -26,7 +29,16 @@ const router = createBrowserRouter([
    },
     { path: "/Boletim",
      element: <Boletim/>
-  }
+  },
+    { path: "/Nota",
+      element: <Nota/>
+  },
+    { path: "/CadastroAlunos",
+      element: <CadastroAlunos/>
+  },
+    { path: "/ConsultaTurma",
+      element: <ConsultaTurma/>
+    }
   ])
 
 
