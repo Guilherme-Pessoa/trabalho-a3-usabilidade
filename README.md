@@ -20,7 +20,7 @@ Este projeto possui o propósito de realizar um sistema escolar onde você possa
 
 HTTPS:
 ```
-git clone https://github.com/the-abreu/A3-SD-Client-And-Server.git
+git clone https://github.com/Guilherme-Pessoa/trabalho-a3-usabilidade.git
 ```
 
 ## Bibliotecas e outras dependências
@@ -69,13 +69,10 @@ INICIALIZAR O projeto:
 npm run dev
 ```
 
-## Como manusear o sistema
-Estando na página inicial, você irá se deparar com as primeiras funcionalidades disponíveis, que são botões que te conduzem as rotas desejadas.
-
 ## Introdução as funcionalidades do sistema
 Estando na página inicial, você irá se deparar com as primeiras funcionalidades disponíveis, que são botões que te conduzem as rotas desejadas. Abordaremos um pouco a cerca das páginas para proporcionar uma contextualização:
 
-![menu](https://user-images.githubusercontent.com/96211934/204113855-5968d13f-75f6-49b3-a6f6-22cc49093337.png)
+![TelaDeHome](https://user-images.githubusercontent.com/96211934/206812045-ca6b0377-2922-4c42-bf84-885fd1341838.png)
 
 
 <details open>
@@ -83,11 +80,13 @@ Estando na página inicial, você irá se deparar com as primeiras funcionalidad
     <b>Consultar Aluno</b>
   </summary>
   
-  ![vendedor](https://user-images.githubusercontent.com/96211934/204113805-e90e2ad1-1b3d-4149-a30b-7739a51ba992.png)
+ ![TelaConsultarAluno](https://user-images.githubusercontent.com/96211934/206812114-8bcc7b26-1a46-48c3-873f-810475511872.png)
+
 
 - Funcionalidade: Nesta tela você poderá consultar os alunos matriculados no sistema, poderá editar seus registros, os deletar, ou cadastrar novos alunos.
 
-- FOTO
+![TelaCadastroAluno](https://user-images.githubusercontent.com/96211934/206812161-e2d812e0-be76-42b3-8b1a-baae927cef0c.png)
+
 </details>
 
 <details open>
@@ -95,23 +94,24 @@ Estando na página inicial, você irá se deparar com as primeiras funcionalidad
     <b>Consultar Turmas</b>
   </summary>
   
-  ![gerente](https://user-images.githubusercontent.com/96211934/204113786-c907190d-2f69-42da-96ae-5f277d099f1e.png)
+![TelaConsultarTurma](https://user-images.githubusercontent.com/96211934/206812248-b871cc42-9e5d-404f-b43a-d726d4fd81b1.png)
 
 
 - Funcionalidade: Nesta tela você poderá consultar as turmas criadas no sistema, poderá editar seus registros, os deletar, ou cadastrar novos turmas.
 
-- FOTO
+![TelaCadastroTurma](https://user-images.githubusercontent.com/96211934/206812273-0271d7e9-d874-4f39-a3a5-69ca10afd6d6.png)
+
 </details>
 
 <details open>
   <summary>
-    <b>Consultar Turmas</b>
+    <b>Boletim</b>
   </summary>
   
-  ![gerente](https://user-images.githubusercontent.com/96211934/204113786-c907190d-2f69-42da-96ae-5f277d099f1e.png)
-
+![TelaBoletim](https://user-images.githubusercontent.com/96211934/206812307-27326e31-f52f-446c-826d-4e233f1da365.png)
 
 - Funcionalidade: Nesta tela você poderá consultar os boletins dos alunos no sistema, poderá editar seus registros, os deletar, ou lançar novas notas.
 
-- FOTO
+![TelaNotas](https://user-images.githubusercontent.com/96211934/206812340-99e5177d-b093-45eb-b058-3377f504e9e9.png)
+
 </details>
